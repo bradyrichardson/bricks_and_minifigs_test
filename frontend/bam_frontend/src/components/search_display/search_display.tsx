@@ -64,7 +64,7 @@ const SearchDisplay = ({ setDetails }: SearchDisplayProps): JSX.Element => {
           }}
         >
           <img
-            src={setDetails.image_url}
+            src={setDetails.image_urls[0]}
             alt={setDetails.name}
             style={{
               width: "120px",
@@ -101,9 +101,9 @@ const SearchDisplay = ({ setDetails }: SearchDisplayProps): JSX.Element => {
             {setDetails.release_year}
           </Typography>
           <Chip
-            label={setDetails.retired ? "Retired" : "Available"}
+            label={setDetails.retired === "TRUE" ? "Retired" : "Available"}
             size="small"
-            color={setDetails.retired ? "default" : "success"}
+            color={setDetails.retired === "TRUE" ? "default" : "success"}
             variant="outlined"
           />
         </Box>

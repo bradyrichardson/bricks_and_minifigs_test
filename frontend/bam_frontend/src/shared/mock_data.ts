@@ -9,8 +9,8 @@ export const mockLegoSets: LegoSetDetails[] = [
     release_year: 2021,
     pieces: 1267,
     num_minifigs: 4,
-    retired: false,
-    image_url: "https://images.brickset.com/sets/images/75313-1.jpg",
+    retired: "FALSE",
+    image_urls: ["https://images.brickset.com/sets/images/75313-1.jpg"],
   },
   {
     id: "2",
@@ -19,8 +19,8 @@ export const mockLegoSets: LegoSetDetails[] = [
     release_year: 2021,
     pieces: 9090,
     num_minifigs: 0,
-    retired: false,
-    image_url: "https://images.brickset.com/sets/images/10294-1.jpg",
+    retired: "FALSE",
+    image_urls: ["https://images.brickset.com/sets/images/10294-1.jpg"],
   },
   {
     id: "3",
@@ -29,8 +29,8 @@ export const mockLegoSets: LegoSetDetails[] = [
     release_year: 2021,
     pieces: 2164,
     num_minifigs: 3,
-    retired: true,
-    image_url: "https://images.brickset.com/sets/images/21325-1.jpg",
+    retired: "TRUE",
+    image_urls: ["https://images.brickset.com/sets/images/21325-1.jpg"],
   },
   {
     id: "4",
@@ -39,8 +39,8 @@ export const mockLegoSets: LegoSetDetails[] = [
     release_year: 2021,
     pieces: 3292,
     num_minifigs: 5,
-    retired: false,
-    image_url: "https://images.brickset.com/sets/images/75309-1.jpg",
+    retired: "FALSE",
+    image_urls: ["https://images.brickset.com/sets/images/75309-1.jpg"],
   },
   {
     id: "5",
@@ -49,8 +49,8 @@ export const mockLegoSets: LegoSetDetails[] = [
     release_year: 2020,
     pieces: 9036,
     num_minifigs: 0,
-    retired: true,
-    image_url: "https://images.brickset.com/sets/images/10276-1.jpg",
+    retired: "TRUE",
+    image_urls: ["https://images.brickset.com/sets/images/10276-1.jpg"],
   },
 ];
 
@@ -68,10 +68,10 @@ export const getAllSets = (): LegoSetDetails[] => {
 
 // Helper function to get retired sets
 export const getRetiredSets = (): LegoSetDetails[] => {
-  return mockLegoSets.filter((set) => set.retired);
+  return mockLegoSets.filter((set) => set.retired === "TRUE");
 };
 
 // Helper function to get current sets
 export const getCurrentSets = (): LegoSetDetails[] => {
-  return mockLegoSets.filter((set) => !set.retired);
+  return mockLegoSets.filter((set) => set.retired === "FALSE");
 };

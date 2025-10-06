@@ -6,6 +6,6 @@ export interface LegoSetDetails {
   release_year: number;
   pieces: number;
   num_minifigs: number;
-  retired: boolean;
-  image_url: string;
+  retired: string;
+  image_urls: string[];
 }

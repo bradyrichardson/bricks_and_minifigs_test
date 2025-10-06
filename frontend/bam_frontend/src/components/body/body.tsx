@@ -10,6 +10,7 @@ const Body = ({ ...props }: BodyProps): JSX.Element => {
         display: "flex",
         justifyContent: "center",
         minHeight: "100vh",
+        paddingTop: "160px",
       }}
     >
       {props.children}
