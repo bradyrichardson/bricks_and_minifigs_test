@@ -1,5 +1,5 @@
 interface RouteOptions {
-  [key: string]: string | number;
+  [key: string]: string;
 }
 
 export type { RouteOptions };

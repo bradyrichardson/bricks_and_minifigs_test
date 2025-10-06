@@ -1,0 +1,4 @@
+export const fetchDataAsync = async () => {
+  const res = await fetch("http://localhost:3000/fetch");
+  console.log(res);
+};

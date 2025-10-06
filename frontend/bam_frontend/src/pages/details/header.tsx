@@ -1,9 +1,13 @@
-import type { JSX } from "react";
+import { Box, Typography } from "@mui/material";
+import { type JSX } from "react";
 import type { RouteOptions } from "../../utils/route/i_route";
 
-const DetailsHeader = ({ options }: RouteOptions): JSX.Element => {
-  console.log(options);
-  return <div></div>;
+const DetailsHeader = (options: RouteOptions): JSX.Element => {
+  return (
+    <Box>
+      <Typography>{options.setName ?? "Not Found"}</Typography>
+    </Box>
+  );
 };
 
 export default DetailsHeader;
