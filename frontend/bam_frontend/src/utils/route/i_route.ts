@@ -1,5 +1,8 @@
+import type { LegoSetDetails } from "../../shared/i_lego_sets";
+
 interface RouteOptions {
-  [key: string]: string;
+  data?: LegoSetDetails[];
+  setDetails?: LegoSetDetails;
 }
 
 export type { RouteOptions };

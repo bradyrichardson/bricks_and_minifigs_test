@@ -5,7 +5,6 @@ import type { HeaderProps } from "./i_header";
 
 // header component that will render above the body
 const Header = ({ ...props }: HeaderProps): JSX.Element => {
-  console.log("header", props);
   return (
     <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <Box sx={{ padding: "20px", marginRight: "auto" }}>

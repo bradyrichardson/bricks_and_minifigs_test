@@ -3,161 +3,54 @@ import type { LegoSetDetails } from "./i_lego_sets";
 // Mock data for LEGO sets
 export const mockLegoSets: LegoSetDetails[] = [
   {
-    setNumber: "75313",
+    id: "1",
     name: "AT-AT",
-    pieceCount: 1267,
-    isRetired: false,
-    releaseYear: 2021,
-    description:
-      "Build the ultimate AT-AT walker from Star Wars: The Empire Strikes Back",
-    theme: "Star Wars",
-    ageRange: "18+",
-    price: 799.99,
-    images: [
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75313-1.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75313-1.jpg",
-        alt: "AT-AT front view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75313-2.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75313-2.jpg",
-        alt: "AT-AT side view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75313-3.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75313-3.jpg",
-        alt: "AT-AT interior view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75313-4.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75313-4.jpg",
-        alt: "AT-AT with minifigures",
-      },
-    ],
+    set_number: "75313",
+    release_year: 2021,
+    pieces: 1267,
+    num_minifigs: 4,
+    retired: false,
+    image_url: "https://images.brickset.com/sets/images/75313-1.jpg",
   },
   {
-    setNumber: "10294",
+    id: "2",
     name: "LEGO Creator Expert Titanic",
-    pieceCount: 9090,
-    isRetired: false,
-    releaseYear: 2021,
-    description: "Build the world's most famous ocean liner in LEGO form",
-    theme: "Creator Expert",
-    ageRange: "18+",
-    price: 629.99,
-    images: [
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10294-1.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10294-1.jpg",
-        alt: "Titanic full view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10294-2.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10294-2.jpg",
-        alt: "Titanic side profile",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10294-3.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10294-3.jpg",
-        alt: "Titanic deck details",
-      },
-    ],
+    set_number: "10294",
+    release_year: 2021,
+    pieces: 9090,
+    num_minifigs: 0,
+    retired: false,
+    image_url: "https://images.brickset.com/sets/images/10294-1.jpg",
   },
   {
-    setNumber: "21325",
+    id: "3",
     name: "Medieval Blacksmith",
-    pieceCount: 2164,
-    isRetired: true,
-    releaseYear: 2021,
-    description: "Build a detailed medieval blacksmith shop with working forge",
-    theme: "Ideas",
-    ageRange: "18+",
-    price: 149.99,
-    images: [
-      {
-        thumbnail: "https://images.brickset.com/sets/images/21325-1.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/21325-1.jpg",
-        alt: "Medieval Blacksmith exterior",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/21325-2.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/21325-2.jpg",
-        alt: "Medieval Blacksmith interior",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/21325-3.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/21325-3.jpg",
-        alt: "Medieval Blacksmith forge detail",
-      },
-    ],
+    set_number: "21325",
+    release_year: 2021,
+    pieces: 2164,
+    num_minifigs: 3,
+    retired: true,
+    image_url: "https://images.brickset.com/sets/images/21325-1.jpg",
   },
   {
-    setNumber: "75309",
+    id: "4",
     name: "Republic Gunship",
-    pieceCount: 3292,
-    isRetired: false,
-    releaseYear: 2021,
-    description:
-      "Build the iconic Republic Gunship from Star Wars: Attack of the Clones",
-    theme: "Star Wars",
-    ageRange: "18+",
-    price: 349.99,
-    images: [
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75309-1.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75309-1.jpg",
-        alt: "Republic Gunship front view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75309-2.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75309-2.jpg",
-        alt: "Republic Gunship side view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75309-3.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75309-3.jpg",
-        alt: "Republic Gunship interior",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75309-4.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75309-4.jpg",
-        alt: "Republic Gunship with minifigures",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/75309-5.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/75309-5.jpg",
-        alt: "Republic Gunship landing gear",
-      },
-    ],
+    set_number: "75309",
+    release_year: 2021,
+    pieces: 3292,
+    num_minifigs: 5,
+    retired: false,
+    image_url: "https://images.brickset.com/sets/images/75309-1.jpg",
   },
   {
-    setNumber: "10276",
+    id: "5",
     name: "Colosseum",
-    pieceCount: 9036,
-    isRetired: true,
-    releaseYear: 2020,
-    description: "Build the iconic Roman Colosseum in LEGO form",
-    theme: "Creator Expert",
-    ageRange: "18+",
-    price: 549.99,
-    images: [
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10276-1.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10276-1.jpg",
-        alt: "Colosseum exterior view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10276-2.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10276-2.jpg",
-        alt: "Colosseum interior view",
-      },
-      {
-        thumbnail: "https://images.brickset.com/sets/images/10276-3.jpg",
-        fullResolution: "https://images.brickset.com/sets/large/10276-3.jpg",
-        alt: "Colosseum architectural details",
-      },
-    ],
+    set_number: "10276",
+    release_year: 2020,
+    pieces: 9036,
+    num_minifigs: 0,
+    retired: true,
+    image_url: "https://images.brickset.com/sets/images/10276-1.jpg",
   },
 ];
 
@@ -165,7 +58,7 @@ export const mockLegoSets: LegoSetDetails[] = [
 export const getSetByNumber = (
   setNumber: string
 ): LegoSetDetails | undefined => {
-  return mockLegoSets.find((set) => set.setNumber === setNumber);
+  return mockLegoSets.find((set) => set.set_number === setNumber);
 };
 
 // Helper function to get all sets
@@ -173,17 +66,12 @@ export const getAllSets = (): LegoSetDetails[] => {
   return mockLegoSets;
 };
 
-// Helper function to get sets by theme
-export const getSetsByTheme = (theme: string): LegoSetDetails[] => {
-  return mockLegoSets.filter((set) => set.theme === theme);
-};
-
 // Helper function to get retired sets
 export const getRetiredSets = (): LegoSetDetails[] => {
-  return mockLegoSets.filter((set) => set.isRetired);
+  return mockLegoSets.filter((set) => set.retired);
 };
 
 // Helper function to get current sets
 export const getCurrentSets = (): LegoSetDetails[] => {
-  return mockLegoSets.filter((set) => !set.isRetired);
+  return mockLegoSets.filter((set) => !set.retired);
 };
