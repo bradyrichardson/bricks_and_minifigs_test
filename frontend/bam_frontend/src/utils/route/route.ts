@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import type { LayoutProps } from "../../components/layout/i_layout";
 import * as Pages from "../../pages/index";
 import type { RouteOptions } from "./i_route";
 
@@ -6,11 +6,17 @@ import type { RouteOptions } from "./i_route";
 export const route = (
   pageName: string,
   options: RouteOptions = {}
-): JSX.Element => {
+): LayoutProps => {
   switch (pageName) {
     case "details":
-      return Pages.DetailsPage(options);
-    default:
-      return Pages.SearchPage();
+      return {
+        header: { title: pageName, children: Pages.DetailsHeader(options) },
+        body: { children: Pages.DetailsBody(options) },
+      };
+    default: // search page will be the default page that is routed to
+      return {
+        header: { title: pageName, children: Pages.SearchHeader(options) },
+        body: { children: Pages.SearchBody(options) },
+      };
   }
 };

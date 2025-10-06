@@ -1,12 +1,12 @@
 import type { JSX } from "react";
 import type { RouteOptions } from "../../utils/route/i_route";
 
-const DetailsPage = ({ options }: RouteOptions): JSX.Element => {
+const DetailsHeader = ({ options }: RouteOptions): JSX.Element => {
   console.log(options);
   return <div></div>;
 };
 
-export default DetailsPage;
+export default DetailsHeader;
 
 // REQUIREMENTS FOR DETAILS:
 // The detail page should include:

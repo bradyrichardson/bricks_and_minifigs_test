@@ -1,5 +1,9 @@
-import type { JSX } from "react";
+import type { BodyProps } from "../body/i_body";
+import type { HeaderProps } from "../header/i_header";
 
-export interface LayoutProps {
-  children: JSX.Element;
+interface LayoutProps {
+  header: HeaderProps;
+  body: BodyProps;
 }
+
+export type { LayoutProps };

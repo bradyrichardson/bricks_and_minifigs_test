@@ -1,12 +1,11 @@
-import DetailsPage from "./details/details";
-import SearchPage from "./search/search";
+import DetailsBody from "./details/body";
+import DetailsHeader from "./details/header";
+import SearchBody from "./search/body";
+import SearchHeader from "./search/header";
 
-export { DetailsPage, SearchPage };
+//TODO: this is where my project structuring kind of breaks down, no automated router, pages are hard-coded here and will have to be added as they are created
 
-
-
-
-
+export { DetailsBody, DetailsHeader, SearchBody, SearchHeader };
 
 // REQUIREMENTS FOR SEARCH:
 // The results should display as a user types in their query (results should start being
