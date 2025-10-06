@@ -3,10 +3,14 @@ import { type JSX } from "react";
 import type { RouteOptions } from "../../utils/route/i_route";
 
 const DetailsHeader = (options: RouteOptions): JSX.Element => {
-  return (
+  const setDetails = options.setDetails;
+
+  return setDetails ? (
     <Box>
-      <Typography>{options.setName ?? "Not Found"}</Typography>
+      <Typography variant="h3">{setDetails.name ?? "Not Found"}</Typography>
     </Box>
+  ) : (
+    <></>
   );
 };
 

@@ -13,6 +13,7 @@ const Layout = ({ ...props }: LayoutProps): JSX.Element => {
         height: "100%",
         backgroundColor: "white",
         color: "black",
+        position: "relative",
       }}
     >
       <Header title={props.header.title} children={props.header.children} />

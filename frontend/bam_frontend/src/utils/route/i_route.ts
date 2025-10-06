@@ -2,7 +2,7 @@ import type { LegoSetDetails } from "../../shared/i_lego_sets";
 
 interface RouteOptions {
   data?: LegoSetDetails[];
-  setDetails?: LegoSetDetails;
+  setId?: string;
 }
 
 export type { RouteOptions };
