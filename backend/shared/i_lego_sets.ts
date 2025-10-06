@@ -1,17 +1,11 @@
 // Interface for LEGO set details
 export interface LegoSetDetails {
-  setNumber: string;
+  id: string;
   name: string;
-  pieceCount: number;
-  isRetired: boolean;
-  releaseYear: number;
-  images: {
-    thumbnail: string;
-    fullResolution: string;
-    alt: string;
-  }[];
-  description?: string;
-  theme?: string;
-  ageRange?: string;
-  price?: number;
+  set_number: string;
+  release_year: number;
+  pieces: number;
+  num_minifigs: number;
+  retired: boolean;
+  image_url: string;
 }

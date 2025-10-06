@@ -1,9 +1,13 @@
+import cors from "cors";
 import express from "express";
 import router from "./index.routes.js";
 
 // using Express because it is lightweight and customizable, does not lock you in to an opinionated framework like NestJs, and is a little more structured than Fastify
 const app = express();
 const port = 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.use(router);
 
