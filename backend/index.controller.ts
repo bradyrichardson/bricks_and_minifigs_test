@@ -3,3 +3,5 @@ class Controller {
 
   static async parseCSV() {}
 }
+
+export default Controller;
