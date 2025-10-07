@@ -8,7 +8,7 @@ const SearchBody = (options: RouteOptions): JSX.Element => {
   const data = options.data;
   const [us_currentPage, us_setCurrentPage] = useState(1);
   const [us_query, us_setQuery] = useState<string>("");
-  const itemsPerPage = 12;
+  const itemsPerPage = 20;
 
   const um_paginatedData = useMemo(() => {
     if (!data) return [];
@@ -36,58 +36,89 @@ const SearchBody = (options: RouteOptions): JSX.Element => {
     us_setQuery(event.target.value);
   };
 
-  //TODO: wrap body in a scrollable view
   return data ? (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        height: "100vh",
       }}
     >
+      {/* header */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
-          gap: "20px",
-          width: "100%",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px",
+          backgroundColor: "white",
+          borderBottom: "1px solid #e0e0e0",
+          flexShrink: 0,
+          width: "100vw",
         }}
       >
-        <h5>Search for:</h5>
-        {/* <RadioGroup></RadioGroup> */}
-        <TextField onChange={handleSearchQueryChange} sx={{ width: "90%" }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "20px",
+            width: "100%",
+            maxWidth: "1200px",
+            alignItems: "center",
+          }}
+        >
+          <h5>Search for:</h5>
+          <TextField onChange={handleSearchQueryChange} sx={{ width: "90%" }} />
+        </Box>
+        <Typography variant="h6" sx={{ marginTop: "10px" }}>
+          Showing {um_paginatedData.length} of {data.length} results
+        </Typography>
       </Box>
-      <Typography variant="h6" sx={{ marginBottom: "20px" }}>
-        Showing {um_paginatedData.length} of {data.length} results
-      </Typography>
 
+      {/* scrollable content */}
       <Box
         sx={{
+          flex: 1,
+          overflowY: "auto",
+          padding: "20px",
           display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          marginBottom: "20px",
           justifyContent: "center",
         }}
       >
-        {um_paginatedData
-          .filter(
-            (entry) =>
-              entry.name.toLowerCase().includes(us_query.toLowerCase()) ||
-              entry.set_number.includes(us_query)
-          )
-          .map((entry) => {
-            return <SearchDisplay key={entry.set_number} setDetails={entry} />;
-          })}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+            maxWidth: "1200px",
+            width: "100%",
+          }}
+        >
+          {um_paginatedData
+            .filter(
+              (entry) =>
+                entry.name.toLowerCase().includes(us_query.toLowerCase()) ||
+                entry.set_number.includes(us_query)
+            )
+            .map((entry) => {
+              return (
+                <SearchDisplay key={entry.set_number} setDetails={entry} />
+              );
+            })}
+        </Box>
       </Box>
 
+      {/* pagination section */}
       {totalPages > 1 && (
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "20px",
+            padding: "20px",
+            backgroundColor: "white",
+            borderTop: "1px solid #e0e0e0",
+            flexShrink: 0,
           }}
         >
           <Pagination
