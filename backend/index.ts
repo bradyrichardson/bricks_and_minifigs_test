@@ -6,7 +6,7 @@ import router from "./index.routes.js";
 const app = express();
 const port = 3000;
 
-// Enable CORS for all routes
+// enable CORS for all routes
 app.use(cors());
 
 app.use(router);
@@ -16,5 +16,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });

@@ -16,7 +16,7 @@ export const zipData = (setData, imageUrlData): LegoSetDetails[] => {
 
   // add image URLs to sets
   for (const imgs of imageUrlData) {
-    // Only add image URLs for sets that exist
+    // only add image URLs for sets that exist
     if (setMap[imgs.lego_set_id]) {
       setMap[imgs.lego_set_id].image_urls.push(imgs.image_url);
     }
@@ -28,15 +28,18 @@ export const zipData = (setData, imageUrlData): LegoSetDetails[] => {
 
 class Controller {
   static async fetchData(request: Request, response: Response) {
-    const setData = await Controller.parseCSV("project-lego_sets.csv");
-    const imageUrlData = await Controller.parseCSV(
-      "project-lego_set_images.csv"
-    );
+    try {
+      const setData = await Controller.parseCSV("project-lego_sets.csv");
+      const imageUrlData = await Controller.parseCSV(
+        "project-lego_set_images.csv"
+      );
 
-    const combinedData = zipData(setData, imageUrlData);
-    console.log(combinedData);
+      const combinedData = zipData(setData, imageUrlData);
 
-    response.status(200).send(combinedData);
+      response.status(200).send(combinedData);
+    } catch (error) {
+      response.status(500);
+    }
   }
 
   static async parseCSV(filePath: string): Promise<any[]> {
