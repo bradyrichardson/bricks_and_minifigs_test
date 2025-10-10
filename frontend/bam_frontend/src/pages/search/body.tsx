@@ -10,18 +10,34 @@ const SearchBody = (options: RouteOptions): JSX.Element => {
   const [us_query, us_setQuery] = useState<string>("");
   const itemsPerPage = 20;
 
-  const um_paginatedData = useMemo(() => {
+  const um_filteredData = useMemo(() => {
     if (!data) return [];
+
+    if (us_query === "") {
+      return data;
+    }
+
+    const filteredData = data.filter(
+      (entry) =>
+        entry.name.toLowerCase().includes(us_query.toLowerCase()) ||
+        entry.set_number.includes(us_query)
+    );
+
+    return filteredData;
+  }, [data, us_query]);
+
+  const um_paginatedData = useMemo(() => {
+    if (!um_filteredData) return [];
 
     const startIndex = (us_currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return data.slice(startIndex, endIndex);
-  }, [data, us_currentPage, itemsPerPage, us_query]);
+    return um_filteredData.slice(startIndex, endIndex);
+  }, [um_filteredData, us_currentPage, itemsPerPage, us_query]);
 
   const totalPages = useMemo(() => {
-    if (!data) return 0;
-    return Math.ceil(data.length / itemsPerPage);
-  }, [data, itemsPerPage]);
+    if (!um_filteredData) return 0;
+    return Math.ceil(um_filteredData.length / itemsPerPage);
+  }, [data, itemsPerPage, um_filteredData]);
 
   const handlePageChange = (
     _event: React.ChangeEvent<unknown>,
@@ -95,17 +111,13 @@ const SearchBody = (options: RouteOptions): JSX.Element => {
             width: "100%",
           }}
         >
-          {um_paginatedData
-            .filter(
-              (entry) =>
-                entry.name.toLowerCase().includes(us_query.toLowerCase()) ||
-                entry.set_number.includes(us_query)
-            )
-            .map((entry) => {
-              return (
-                <SearchDisplay key={entry.set_number} setDetails={entry} />
-              );
-            })}
+          {us_query === ""
+            ? um_paginatedData.map((entry, idx) => {
+                return <SearchDisplay key={idx} setDetails={entry} />;
+              })
+            : um_filteredData.map((entry, idx) => {
+                return <SearchDisplay key={idx} setDetails={entry} />;
+              })}
         </Box>
       </Box>
 
